@@ -78,8 +78,15 @@ android {
 
     buildTypes {
         release {
-            // Použijeme debug podpis pro release, aby byla instalace bezproblémová
-            signingConfig signingConfigs.debug
+            // Kdyz je v local.properties vyplnena keystore.path, pouzije se vlastni
+            // release klic. Jinak zustava debug podpis.
+            //
+            // Proc vubec debug podpis: aplikace nainstalovana na telefonu je jim
+            // podepsana a novy build musi mit STEJNY podpis, jinak ho nelze
+            // nainstalovat jako aktualizaci - slo by jen odinstalovat, tedy prijit
+            // o data. Na Google Play by debug podpis neprosel, tam je potreba
+            // vlastni klic (viz README, sekce Podepisovani).
+            signingConfig = localProps['keystore.path'] ? signingConfigs.release : signingConfigs.debug
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

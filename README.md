@@ -230,8 +230,81 @@ sdk.dir=C:\Users\<jméno>\AppData\Local\Android\Sdk
 
 Sestavení: `gradlew assembleRelease`, testy: `gradlew testDebugUnitTest`.
 
-Release build se podepisuje debug klíčem z `~/.android/debug.keystore` — ten
-v repozitáři není a níže je popsáno proč na tom záleží.
+---
+
+## Práce na více počítačích
+
+Do repozitáře nepatří nic, co je vázané na konkrétní počítač ani co je tajné.
+Dvě takové věci projekt má a na novém stroji se dořeší takto:
+
+### 1. `local.properties` — cesta k Android SDK
+
+Vytvoří ho Android Studio sámo při prvním otevření projektu. Ručně:
+
+```properties
+sdk.dir=C:\\Users\\<jméno>\\AppData\\Local\\Android\\Sdk
+```
+
+### 2. Podpisový klíč — musí být na obou počítačích stejný
+
+Tohle je to podstatné. Android dovolí nainstalovat aktualizaci přes už
+nainstalovanou aplikaci **jen když mají shodný podpis**. Jinak zůstává jediná
+cesta odinstalovat — a tím přijít o všechna data.
+
+Každý počítač si přitom při prvním buildu vygeneruje **vlastní** debug klíč.
+Kdyby se projekt jen naklonoval a sestavil, vznikl by jinak podepsaný balíček,
+který na telefon nepůjde nainstalovat.
+
+**Řešení: přenést klíč ze starého počítače na nový.**
+
+```
+zdroj:  %USERPROFILE%\.android\debug.keystore
+cíl:    %USERPROFILE%\.android\debug.keystore   (na novém počítači přepsat)
+```
+
+Přenést přes USB disk nebo správce hesel, **ne přes git**. Heslo keystoru
+i klíče je `android`, alias `androiddebugkey` — to jsou výchozí hodnoty Androidu,
+proto tento klíč není bezpečnostní opatření, ale jen způsob, jak udržet
+instalace kompatibilní.
+
+Po přepisu klíče stačí běžný `gradlew assembleRelease` a výsledné APK půjde
+nainstalovat přes stávající aplikaci.
+
+### 3. Vlastní release klíč (volitelné, nutné pro Google Play)
+
+Když se v `local.properties` vyplní `keystore.path`, použije se místo debug
+klíče vlastní release keystore:
+
+```properties
+keystore.path=keystore/release.keystore
+keystore.alias=byd-logger
+keystore.store.password=...
+keystore.key.password=...
+```
+
+Klíč ani hesla se do repozitáře nedostanou — `local.properties` i `keystore/`
+jsou v `.gitignore`. Na dalším počítači se soubor klíče i tyto řádky musí
+doplňovat ručně, stejně jako u debug klíče.
+
+**Pozor:** přechod z debug klíče na vlastní změní podpis aplikace. Tu, která je
+na telefonu, pak půjde nahradit jen přes odinstalaci — před tím si uložit zálohu
+a po instalaci ji obnovit.
+
+### Shrnutí pro nový počítač
+
+```bash
+git clone https://github.com/MartinRaSt/BYDAuto.git
+cd BYDAuto
+# otevřít v Android Studiu (vytvoří local.properties)
+# překopírovat debug.keystore ze starého počítače do %USERPROFILE%\.android\
+gradlew testDebugUnitTest
+gradlew assembleRelease
+```
+
+Změny se přenášejí přes `git pull` a `git push` jako obvykle. `version.properties`
+je v repozitáři, takže se číslo verze zvyšuje dál ze společného stavu — pokud
+se bude buildovat na obou strojích, je nutné před buildem `git pull`, jinak
+vznikne konflikt v tomto souboru.
 
 ---
 
