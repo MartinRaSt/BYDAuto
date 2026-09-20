@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BYD Logger</string>
+    <string name="add_charging">Nový záznam</string>
+    <string name="edit_charging">Upravit záznam</string>
+    <string name="no_records">Žádné záznamy.\nKlepněte na + pro přidání.</string>
+    <string name="settings">Nastavení</string>
+    <string name="language">Jazyk aplikace</string>
+    <string name="theme">Téma aplikace</string>
+    <string name="theme_system">Dle systému</string>
+    <string name="theme_light">Světlé</string>
+    <string name="theme_dark">Tmavé</string>
+    <string name="apply">Použít a restartovat</string>
+    <string name="save">Uložit</string>
+    <string name="cancel">Zrušit</string>
+    <string name="delete">Smazat</string>
+    <string name="edit">Upravit</string>
+    <string name="confirm_delete_title">Smazat záznam</string>
+    <string name="confirm_delete_message">Opravdu smazat záznam z %1$s?</string>
+    <string name="fill_all_fields">Vyplňte všechna povinná pole</string>
+    <string name="no_data_to_export">Žádná data k exportu</string>
+    <string name="export_email_subject">BYD Logger – export dat</string>
+    <string name="export_email_body">V příloze naleznete ZIP archiv s exportem dat (BYD Logger).</string>
+    <string name="send_csv">Odeslat emailem</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="export_dialog_title">Odeslat export emailem</string>
+    <string name="export_email_hint">Cílová e-mailová adresa</string>
+    <string name="invalid_email">Zadejte platnou e-mailovou adresu</string>
+
+    <!-- Záložky -->
+    <string name="tab_dashboard">Přehled</string>
+    <string name="tab_records">Záznamy</string>
+    <string name="tab_charts">Grafy</string>
+
+    <!-- Typy záznamů -->
+    <string name="type_home_fve">Doma – FVE</string>
+    <string name="type_home_grid">Doma – Grid</string>
+    <string name="type_garage">Garáž</string>
+    <string name="type_public">Veřejná nabíječka</string>
+    <string name="type_gasoline">Benzín</string>
+    <string name="type_all">Všechny typy</string>
+
+    <!-- Formulář / Filtry -->
+    <string name="label_date">Datum</string>
+    <string name="label_date_from">Od</string>
+    <string name="label_date_to">Do</string>
+    <string name="filter_options">Filtrování dat</string>
+    <string name="label_start_time">Začátek</string>
+    <string name="label_end_time">Konec</string>
+    <string name="label_power_kw">Výkon (kW)</string>
+    <string name="label_start_meter">Elektroměr auta na začátku (kWh)</string>
+    <string name="label_end_meter">Elektroměr auta na konci (kWh)</string>
+    <string name="label_charged_kwh">Nabito (kWh)</string>
+    <string name="label_charged_liters">Tankováno (l)</string>
+    <string name="label_main_meter">Hlavní elektroměr na začátku (kWh)</string>
+    <string name="label_main_meter_end">Hlavní elektroměr na konci (kWh)</string>
+    <string name="label_garage_meter_start">Elektroměr garáže na začátku (kWh)</string>
+    <string name="label_garage_meter_end">Elektroměr garáže na konci (kWh)</string>
+    <string name="label_note">Poznámka (volitelné)</string>
+    <string name="label_charging_type">Typ záznamu</string>
+    <string name="label_price_per_kwh">Cena za kWh (Kč)</string>
+    <string name="label_price_per_liter">Cena za litr (Kč)</string>
+    <string name="label_total_price">Celková cena (Kč)</string>
+    <string name="label_duration">Doba trvání (min)</string>
+    <string name="label_location">Místo (volitelné)</string>
+    <string name="label_odometer">Tachometr (km)</string>
+    <string name="label_tank_capacity">Velikost nádrže (l)</string>
+    <string name="label_battery_capacity">Velikost baterie (kWh)</string>
+
+    <!-- Formáty v seznamu -->
+    <string name="fmt_time_range">%1$s – %2$s</string>
+    <string name="fmt_power">%1$s kW</string>
+    <string name="fmt_charged">%1$s kWh nabito</string>
+    <string name="fmt_refueled">%1$s l natankováno</string>
+    <string name="fmt_car_meter">Elektroměr auta: %1$s kWh</string>
+    <string name="fmt_main_meter">Hlavní elektroměr: %1$s kWh</string>
+    <string name="fmt_odometer">Tachometr: %1$s km</string>
+    <string name="fmt_consumption">%1$s l/100 km</string>
+    <string name="fmt_cost">%1$s Kč</string>
+
+    <!-- Grafy – přepínač -->
+    <string name="chart_by_type">Členění podle typu</string>
+    <string name="chart_monthly_kwh">Měsíční kWh</string>
+    <string name="chart_monthly_cost">Měsíční náklady</string>
+    <string name="no_chart_data">Žádná data pro zobrazení</string>
+
+    <!-- Grafy – statistiky -->
+    <string name="stats_total_kwh">Celkem elektřina</string>
+    <string name="stats_total_kwh_val">%1$s kWh</string>
+    <string name="stats_total_gas">Celkem benzín</string>
+    <string name="stats_total_gas_val">%1$s l</string>
+    <string name="stats_total_cost">Celková cena</string>
+    <string name="stats_avg_consumption">Celková průměrná spotřeba</string>
+    <string name="stats_last_consumption">Spotřeba od min. tankování</string>
+    <string name="stats_total_cost_val">%1$s Kč</string>
+    <string name="stats_sessions">Záznamy</string>
+    <string name="stats_sessions_val">%1$d ×</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_current_month">Tento měsíc</string>
+    <string name="dashboard_all_time">Celkem (vše)</string>
+    <string name="dashboard_breakdown">Členění podle typu</string>
+    <string name="fmt_breakdown_item">%1$s: %2$s (%3$d×)</string>
+    <string name="error_invalid_power">Výkon musí být větší než 0</string>
+    <string name="error_invalid_charged">Nabité kWh musí být větší než 0</string>
+    <string name="error_invalid_number">Zadejte platné nezáporné číslo</string>
+    <string name="duplicate_warning_title">Možná duplicita</string>
+    <string name="duplicate_warning_message">Podobný záznam už existuje (shodný čas nebo stav elektroměru). Chcete jej přesto uložit?</string>
+    <string name="export_failed">Export se nezdařil</string>
+    <string name="no_email_app">Nebyla nalezena žádná emailová aplikace</string>
+    <string name="import_failed">Import se nezdařil</string>
+
+    <!-- Import / obnovení zálohy -->
+    <string name="restore_backup">Obnovit zálohu…</string>
+    <string name="import_title">Obnovit zálohu</string>
+    <string name="import_found_records">Nalezeno %1$d záznamů.\n\nCo chcete udělat?</string>
+    <string name="import_add">Přidat k datům</string>
+    <string name="import_replace">Nahradit vše</string>
+    <string name="import_replace_confirm">Opravdu smazat všechna stávající data a nahradit je zálohou? Tuto akci nelze vrátit zpět.</string>
+    <string name="import_done">Obnoveno %1$d záznamů</string>
+    <string name="import_no_data">Soubor neobsahuje platná data pro import</string>
+
+    <!-- O aplikaci -->
+    <string name="action_about">O aplikaci</string>
+    <string name="about_version">Verze %1$s (build %2$d)</string>
+    <string name="about_description">Aplikace pro evidenci provozu vozu BYD.\nUmožňuje sledovat spotřebu elektřiny, benzínu, náklady a místa s exportem do CSV.</string>
+    <string name="about_db_version">Databáze: verze %1$d</string>
+
+    <!-- GPS poloha -->
+    <string name="gps_load_location">Načíst GPS polohu</string>
+    <string name="gps_loading">Načítání polohy…</string>
+    <string name="gps_permission_denied">Přístup k poloze byl odepřen</string>
+    <string name="gps_unavailable">GPS ani síť nejsou k dispozici</string>
+    <string name="gps_timeout">Poloha nenalezena – zkuste to znovu</string>
+    <string name="open_in_maps">Otevřít v mapách</string>
+    <string name="fmt_gps_coords">%1$.5f, %2$.5f</string>
+
+    <!-- Stav baterie (SOC) -->
+    <string name="label_soc_start">Baterie na začátku</string>
+    <string name="label_soc_end">Baterie na konci</string>
+    <string name="action_set_today">Nastavit dnešní datum</string>
+    <string name="action_set_now">Nastavit aktuální čas</string>
+    <string name="action_set_full">Nabito na 100 %</string>
+    <string name="error_soc_range">Stav baterie musí být mezi 0 a 100 %</string>
+    <string name="error_soc_order">Konec nabíjení musí být vyšší než začátek</string>
+
+    <!-- Odvozené hodnoty u záznamu -->
+    <string name="fmt_soc_range">%1$s %% → %2$s %%</string>
+    <string name="fmt_soc_gain">Do baterie %1$s kWh (%2$s %%)</string>
+    <string name="fmt_soc_gain_estimate">Odhad konce: ~%1$s %% (při 100%% účinnosti)</string>
+    <string name="fmt_efficiency">účinnost %1$s %%</string>
+    <string name="fmt_real_power">reálně %1$s kW</string>
+    <string name="fmt_session_range">vystací na ~%1$s km</string>
+    <string name="soc_efficiency_suspicious">Účinnost mimo očekávané rozmezí – zkontrolujte %%, kWh a kapacitu baterie v nastavení</string>
+    <string name="label_efficiency">Účinnost nabíjení</string>
+    <string name="label_real_power">Reálný výkon</string>
+    <string name="label_soc">Stav baterie</string>
+    <string name="label_battery_gain">Nabito do baterie</string>
+
+    <!-- Dashboard – elektrické statistiky -->
+    <string name="stats_electric_consumption">Elektřina na 100 km</string>
+    <string name="stats_battery_consumption">Reálná spotřeba baterie</string>
+    <string name="stats_electric_range">Dojezd na plnou baterii</string>
+    <string name="stats_avg_efficiency">Průměrná účinnost nabíjení</string>
+    <string name="stats_cost_per_100km">Náklady na 100 km</string>
+    <string name="stats_distance">Najectáno (tachometr)</string>
+    <string name="fmt_kwh_per_100km">%1$s kWh/100 km</string>
+    <string name="fmt_km">%1$s km</string>
+    <string name="fmt_percent">%1$s %%</string>
+    <string name="fmt_cost_per_100km">%1$s Kč/100 km</string>
+    <string name="fmt_cost_split">%1$s Kč/100 km (elektřina %2$s, benzín %3$s)</string>
+    <string name="hint_combined_consumption">Počítáno přes všechny ujeté kilometry, tedy včetně jízdy na benzín.</string>
+    <string name="hint_battery_consumption">Z úseků mezi nabíjeními bez tankování – medián.</string>
+
+    <!-- Grafy – nové pohledy -->
+    <string name="chart_soc">Stav baterie</string>
+    <string name="chart_efficiency">Účinnost nabíjení</string>
+    <string name="chart_legend_soc_start">Začátek (%)</string>
+    <string name="chart_legend_soc_end">Konec (%)</string>
+    <string name="chart_legend_efficiency">Účinnost (%)</string>
+
+    <!-- Sezony -->
+    <string name="season_spring">Jaro</string>
+    <string name="season_summer">Léto</string>
+    <string name="season_autumn">Podzim</string>
+    <string name="season_winter">Zima</string>
+    <string name="chart_by_season">Podle sezóny</string>
+    <string name="dashboard_seasons">Podle sezóny</string>
+    <string name="hint_seasons">Spotřeba baterie v kWh/100 km; sezóny se sčítají přes všechny roky.</string>
+    <string name="fmt_season_line">%1$s: %2$s</string>
+
+    <!-- Statistiky emailem -->
+    <string name="action_send_stats">Odeslat statistiky emailem</string>
+    <string name="stats_email_subject">BYD Logger – statistiky</string>
+    <string name="send_stats">Odeslat statistiky</string>
+    <string name="report_title">BYD Logger – přehled statistik</string>
+    <string name="report_period">Období: %1$s – %2$s</string>
+    <string name="report_record_count">Počet záznamů: %1$d</string>
+    <string name="report_battery_capacity">Kapacita baterie: %1$s kWh</string>
+    <string name="report_section_total">CELKEM</string>
+    <string name="report_section_seasons">PODLE SEZÓNY</string>
+    <string name="report_season_header">%1$s (%2$d záznamů)</string>
+    <string name="report_no_data">Nedostatek dat</string>
+    <string name="report_footer">Přiložený ZIP obsahuje stejná čísla v CSV (sezóny i jednotlivé měsíce).</string>
+
+    <string name="fmt_season_battery">%1$s: baterie %2$s kWh/100 km, dojezd %3$s km</string>
+    <string name="fmt_season_combined">%1$s: elektřina %2$s kWh/100 km, benzín %3$s l/100 km</string>
+    <string name="fmt_season_minimal">%1$s: %2$d záznamů</string>
+    <string name="chart_legend_electric">Elektřina (kWh/100 km)</string>
+    <string name="chart_legend_gasoline">Benzín (l/100 km)</string>
+
+    <!-- Zaloha do souboru -->
+    <string name="action_backup_file">Uložit zálohu do souboru</string>
+    <string name="backup_saved">Záloha uložena (%1$d záznamů)</string>
+    <string name="backup_save_failed">Zálohu se nepodařilo uložit</string>
+
+    <!-- Zalozky podle druhu energie -->
+    <string name="tab_electric">Elektřina</string>
+    <string name="tab_gasoline">Benzín</string>
+    <string name="energy_electric">Elektřina</string>
+    <string name="energy_gasoline">Benzín</string>
+    <string name="energy_no_electric">Zatím žádné nabíjení.\nPřidejte záznam na záložce Záznamy.</string>
+    <string name="energy_no_gasoline">Zatím žádné tankování.\nPřidejte záznam na záložce Záznamy.</string>
+    <string name="energy_section_consumption">Spotřeba</string>
+    <string name="stats_avg_price_liter">Průměrná cena za litr</string>
+    <string name="stats_avg_price_kwh">Průměrná cena za kWh</string>
+    <string name="hint_full_tank">Metodou plné nádrže – předpokládá se tankování do plné.</string>
+    <string name="fmt_breakdown_value">%1$s (%2$d×)</string>
+
+    <!-- Vyber obdobi na zalozkach energie -->
+    <string name="energy_period">Období</string>
+    <string name="period_all">Celé období</string>
+    <string name="period_current_year">Aktuální rok (%1$s)</string>
+    <string name="energy_section_months">Po měsících</string>
+    <string name="energy_section_period">Celkem za období</string>
+    <string name="hint_period_consumption">Průměr za zvolené období; kilometry z odečtů tachometru uvnitř něj.</string>
+
+    <!-- Vnitrni zalozky Grafu a porovnani -->
+    <string name="chart_tab_total">Total</string>
+    <string name="chart_tab_compare">Porovnání</string>
+    <string name="compare_what">Co porovnat</string>
+    <string name="compare_mode_periods">Dvě období proti sobě</string>
+    <string name="compare_mode_energy">Elektřina proti benzínu</string>
+    <string name="compare_mode_types">Typy nabíjení</string>
+    <string name="compare_mode_years">Rok proti roku</string>
+    <string name="compare_period_a">Období A</string>
+    <string name="compare_period_b">Období B</string>
+    <string name="compare_diff">Rozdíl</string>
+    <string name="compare_amount">Množství</string>
+    <string name="compare_saving">Úspora na 100 km</string>
+    <string name="compare_col_amount">Množství</string>
+    <string name="compare_col_price">Cena/kWh</string>
+    <string name="compare_col_share">Podíl</string>
+    <string name="compare_col_electric">Elektřina</string>
+    <string name="compare_col_gasoline">Benzín</string>
+    <string name="compare_col_cost">Náklady</string>
+    <string name="period_whole_year">Celý rok</string>
+    <string name="period_month">Měsíc</string>
+
+    <!-- Grafy na zalozkach energie a porovnani -->
+    <string name="chart_metric_consumption">Spotřeba</string>
+    <string name="chart_metric_amount">Množství</string>
+    <string name="chart_metric_cost">Náklady</string>
+    <string name="chart_quick_overview">Rychlý přehled</string>
+    <string name="chart_by_years">Po letech</string>
+    <string name="chart_by_months">Po měsících</string>
+</resources>

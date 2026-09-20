@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Typ a Datum -->
+        <TextView
+            android:id="@+id/tvDetailType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvDetailDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <include layout="@layout/view_detail_row" android:id="@+id/rowOdometer" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sekce Čas a Výkon -->
+        <LinearLayout
+            android:id="@+id/layoutDetailElectric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/view_detail_row" android:id="@+id/rowTime" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowDuration" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowPower" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowRealPower" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowSoc" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowBatteryGain" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowEfficiency" />
+            <include layout="@layout/view_detail_row" android:id="@+id/rowSessionRange" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp" />
+        </LinearLayout>
+
+        <!-- Sekce Nabito a Cena -->
+        <include layout="@layout/view_detail_row" android:id="@+id/rowCharged" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowPricePerUnit" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowTotalPrice" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp" />
+
+        <!-- Sekce Elektroměry -->
+        <TextView
+            android:id="@+id/tvLabelMeters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_options"
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginBottom="4dp" />
+
+        <include layout="@layout/view_detail_row" android:id="@+id/rowCarMeterStart" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowCarMeterEnd" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowMainMeterStart" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowMainMeterEnd" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowGarageMeterStart" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowGarageMeterEnd" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp" />
+
+        <!-- Místo a Poznámka -->
+        <include layout="@layout/view_detail_row" android:id="@+id/rowLocation" />
+        <include layout="@layout/view_detail_row" android:id="@+id/rowNote" />
+
+        <!-- Tlačítko Editace -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetailEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/edit"
+            app:icon="@drawable/ic_edit" />
+
+    </LinearLayout>
+</ScrollView>

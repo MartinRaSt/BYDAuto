@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Karoserie - bílá silueta BYD Atto 3 (SUV profil s oblouky kol) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+        M 12,65
+        Q 24,80 36,65
+        L 64,65
+        Q 78,80 92,65
+        L 94,65
+        L 94,68
+        L 92,52
+        L 88,38
+        L 82,28
+        L 76,23
+        L 45,22
+        L 41,25
+        L 36,32
+        L 32,35
+        L 26,40
+        L 20,44
+        C 16,47 13,51 12,57
+        Z" />
+
+    <!-- Okna - modrostříbrná -->
+    <path
+        android:fillColor="#7EC8E3"
+        android:pathData="M 36,32 L 41,25 L 45,22 L 76,23 L 82,28 L 86,37 L 34,37 Z" />
+
+    <!-- B-sloupek (oddělení čelního a bočního skla) - tmavý, efekt plovoucí střechy -->
+    <path
+        android:fillColor="#002266"
+        android:pathData="M 53,22 L 57,22 L 57,37 L 53,37 Z" />
+
+    <!-- Přední kolo - pneumatika -->
+    <path
+        android:fillColor="#1C1C1C"
+        android:pathData="M 14,72 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0 Z" />
+    <!-- Přední kolo - disk -->
+    <path
+        android:fillColor="#999999"
+        android:pathData="M 19,72 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0 Z" />
+    <!-- Přední kolo - střed disku -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M 22,72 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0 Z" />
+
+    <!-- Zadní kolo - pneumatika -->
+    <path
+        android:fillColor="#1C1C1C"
+        android:pathData="M 68,72 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0 Z" />
+    <!-- Zadní kolo - disk -->
+    <path
+        android:fillColor="#999999"
+        android:pathData="M 73,72 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0 Z" />
+    <!-- Zadní kolo - střed disku -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M 76,72 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0 Z" />
+
+    <!-- Přední světlomet (jantarový) -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M 13,53 L 18,49 L 20,54 L 14,57 Z" />
+
+    <!-- Zadní světlomet (červený) -->
+    <path
+        android:fillColor="#EF3333"
+        android:pathData="M 91,44 L 94,44 L 94,53 L 91,53 Z" />
+
+</vector>

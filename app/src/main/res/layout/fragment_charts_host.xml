@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Obal zalozky Grafy: vnitrni zalozky Total / Elektrina / Benzin / Compare.
+
+    Vnitrni ViewPager2 ma vypnute prejizdeni prstem (userInputEnabled = false
+    v kodu). Dva vnorene ViewPager2 by si horizontalni gesta prebiraly a
+    prepinani mezi hlavnimi zalozkami by prestalo fungovat; prepina se klepnutim.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/innerTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabGravity="fill" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/innerViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

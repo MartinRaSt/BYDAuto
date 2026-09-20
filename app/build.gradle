@@ -1,0 +1,167 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+// Načtení signing parametrů z local.properties (není v gitu)
+def localProps = new Properties()
+def localPropsFile = rootProject.file("local.properties")
+if (localPropsFile.exists()) {
+    localPropsFile.withInputStream { localProps.load(it) }
+}
+
+// Načtení verze a automatické navýšení versionCode
+def versionPropsFile = file('version.properties')
+def versionProps = new Properties()
+if (versionPropsFile.exists()) {
+    versionPropsFile.withInputStream { versionProps.load(it) }
+}
+
+// Chybejici nebo poskozeny soubor nesmi shodit build - doplni se vychozi hodnoty
+def vCode = (versionProps['VERSION_CODE'] ?: '1') as Integer
+def vName = (versionProps['VERSION_NAME'] ?: '1.0.0').toString()
+
+// Zvysit verzi pouze pri skutecnem buildu (ne pri syncu v IDE).
+//
+// versionCode roste o jedna pri kazdem buildu.
+// versionName se zvysuje v posledni (patch) casti: 1.0.3 -> 1.0.4.
+// Prvni dve cisla (major.minor) se meni RUCNE v app/version.properties,
+// kdyz prijde vetsi zmena - skript do nich nesahne.
+def runTasks = gradle.startParameter.taskNames
+if (runTasks.any { it.contains("assemble") || it.contains("bundle") || it.contains("install") || it.contains("generate") }) {
+    vCode++
+
+    // Rozdeleni na tecky misto regularniho vyrazu: ve slashy stringu Groovy
+    // je '$' znak interpolace a escapovani se tu chova zradne
+    def parts = vName.tokenize('.')
+    if (parts.size() == 3 && parts.every { it.isInteger() }) {
+        // toString() je nutny: Properties.store() prijima jen String,
+        // na GString z interpolace spadne
+        vName = "${parts[0]}.${parts[1]}.${(parts[2] as Integer) + 1}".toString()
+    } else {
+        logger.warn("version.properties: VERSION_NAME '${vName}' neni ve tvaru x.y.z, patch se nezvysuje")
+    }
+
+    versionProps['VERSION_CODE'] = vCode.toString()
+    versionProps['VERSION_NAME'] = vName
+
+    // Nejdriv sestavit obsah v pameti, teprve pak prepsat soubor. Kdyby store()
+    // selhal, zustane na disku puvodni verze misto prazdneho souboru.
+    def buffer = new ByteArrayOutputStream()
+    versionProps.store(buffer, "Generovano buildem - major.minor menit rucne")
+    versionPropsFile.bytes = buffer.toByteArray()
+}
+
+android {
+    namespace 'com.byd.charging'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.byd.charging"
+        minSdk 26
+        targetSdk 34
+        versionCode vCode
+        versionName vName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            def ksPath = localProps['keystore.path']
+            storeFile     ksPath ? rootProject.file(ksPath) : null
+            storePassword localProps['keystore.store.password'] ?: ""
+            keyAlias      localProps['keystore.alias']          ?: "byd-logger"
+            keyPassword   localProps['keystore.key.password']   ?: ""
+        }
+    }
+
+    buildTypes {
+        release {
+            // Použijeme debug podpis pro release, aby byla instalace bezproblémová
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+
+            // Debug a instrumentovane testy bezi jako samostatny balicek.
+            //
+            // DULEZITE: gradle connectedAndroidTest po dobehnuti testu aplikaci
+            // ODINSTALUJE, a odinstalace maze data. Bez tohoto suffixu by testy
+            // na autorove telefonu smazaly ostrou aplikaci i s databazi
+            // (stalo se 2026-09-20). Se suffixem se instaluje a maze pouze
+            // com.byd.charging.debug a ostra aplikace zustava netknuta.
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    // Migracni test potrebuje videt exportovana schemata jako assety
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+// Room schema export – generuje schemas/2.json pro sledování migrací ve VCS
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas")
+        arg("room.incremental", "true")
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+
+    // Room
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // ViewModel + LiveData
+    def lifecycle_version = "2.7.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    // ViewPager2 + Fragment
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+
+    // Grafy
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Testy
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+}

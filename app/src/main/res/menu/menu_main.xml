@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_export"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/export_csv"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_backup_file"
+        android:title="@string/action_backup_file"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_send_stats"
+        android:title="@string/action_send_stats"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_import"
+        android:title="@string/restore_backup"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FileProvider: sdílí pouze podadresář "exports" v cacheDir.
+    Odpovídá CsvExporter.EXPORT_SUBDIR = "exports".
+    Nesdílí celý cacheDir – princip nejmenších oprávnění.
+-->
+<paths>
+    <cache-path name="csv_export" path="exports/" />
+</paths>

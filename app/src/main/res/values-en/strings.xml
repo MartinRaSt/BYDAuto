@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BYD Logger</string>
+    <string name="add_charging">New record</string>
+    <string name="edit_charging">Edit record</string>
+    <string name="no_records">No records.\nTap + to add one.</string>
+    <string name="settings">Settings</string>
+    <string name="language">App language</string>
+    <string name="theme">App theme</string>
+    <string name="theme_system">System default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="apply">Apply and restart</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="confirm_delete_title">Delete record</string>
+    <string name="confirm_delete_message">Really delete record from %1$s?</string>
+    <string name="fill_all_fields">Please fill in all required fields</string>
+    <string name="no_data_to_export">No data to export</string>
+    <string name="export_email_subject">BYD Logger – data export</string>
+    <string name="export_email_body">Please find attached a ZIP archive with your BYD Logger data export.</string>
+    <string name="send_csv">Send by email</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="export_dialog_title">Send export by email</string>
+    <string name="export_email_hint">Recipient e-mail address</string>
+    <string name="invalid_email">Please enter a valid e-mail address</string>
+
+    <!-- Tabs -->
+    <string name="tab_dashboard">Overview</string>
+    <string name="tab_records">Records</string>
+    <string name="tab_charts">Charts</string>
+
+    <!-- Record types -->
+    <string name="type_home_fve">Home – Solar</string>
+    <string name="type_home_grid">Home – Grid</string>
+    <string name="type_garage">Garage</string>
+    <string name="type_public">Public charger</string>
+    <string name="type_gasoline">Gasoline</string>
+
+    <!-- Form -->
+    <string name="label_date">Date</string>
+    <string name="label_start_time">Start</string>
+    <string name="label_end_time">End</string>
+    <string name="label_power_kw">Power (kW)</string>
+    <string name="label_start_meter">Car meter at start (kWh)</string>
+    <string name="label_end_meter">Car meter at end (kWh)</string>
+    <string name="label_charged_kwh">Charged (kWh)</string>
+    <string name="label_charged_liters">Refueled (l)</string>
+    <string name="label_main_meter">Main meter at start (kWh)</string>
+    <string name="label_main_meter_end">Main meter at end (kWh)</string>
+    <string name="label_garage_meter_start">Garage meter at start (kWh)</string>
+    <string name="label_garage_meter_end">Garage meter at end (kWh)</string>
+    <string name="label_note">Note (optional)</string>
+    <string name="label_charging_type">Record type</string>
+    <string name="label_price_per_kwh">Price per kWh (CZK)</string>
+    <string name="label_price_per_liter">Price per liter (CZK)</string>
+    <string name="label_total_price">Total price (CZK)</string>
+    <string name="label_duration">Duration (min)</string>
+    <string name="label_location">Location (optional)</string>
+    <string name="label_odometer">Odometer (km)</string>
+    <string name="label_tank_capacity">Tank capacity (l)</string>
+    <string name="label_battery_capacity">Battery capacity (kWh)</string>
+
+    <!-- List item formats -->
+    <string name="fmt_time_range">%1$s – %2$s</string>
+    <string name="fmt_power">%1$s kW</string>
+    <string name="fmt_charged">%1$s kWh charged</string>
+    <string name="fmt_refueled">%1$s l refueled</string>
+    <string name="fmt_car_meter">Car meter: %1$s kWh</string>
+    <string name="fmt_main_meter">Main meter: %1$s kWh</string>
+    <string name="fmt_odometer">Odometer: %1$s km</string>
+    <string name="fmt_consumption">%1$s l/100 km</string>
+    <string name="fmt_cost">%1$s CZK</string>
+
+    <!-- Charts – selector -->
+    <string name="chart_by_type">Breakdown by type</string>
+    <string name="chart_monthly_kwh">Monthly kWh</string>
+    <string name="chart_monthly_cost">Monthly costs</string>
+    <string name="no_chart_data">No data to display</string>
+
+    <!-- Charts – stats -->
+    <string name="stats_total_kwh">Total electricity</string>
+    <string name="stats_total_kwh_val">%1$s kWh</string>
+    <string name="stats_total_gas">Total gasoline</string>
+    <string name="stats_total_gas_val">%1$s l</string>
+    <string name="stats_total_cost">Total cost</string>
+    <string name="stats_avg_consumption">Total average consumption</string>
+    <string name="stats_last_consumption">Last trip consumption</string>
+    <string name="stats_total_cost_val">%1$s CZK</string>
+    <string name="stats_sessions">Records</string>
+    <string name="stats_sessions_val">%1$d ×</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_current_month">Current Month</string>
+    <string name="dashboard_all_time">All Time</string>
+    <string name="dashboard_breakdown">Breakdown by type</string>
+    <string name="fmt_breakdown_item">%1$s: %2$s (%3$d sessions)</string>
+    <string name="error_invalid_power">Power must be greater than 0</string>
+    <string name="error_invalid_charged">Charged kWh must be greater than 0</string>
+    <string name="error_invalid_number">Please enter a valid non-negative number</string>
+    <string name="duplicate_warning_title">Possible Duplicate</string>
+    <string name="duplicate_warning_message">A similar record already exists (same time or meter reading). Do you want to save it anyway?</string>
+    <string name="export_failed">Export failed</string>
+    <string name="no_email_app">No email app found</string>
+    <string name="import_failed">Import failed</string>
+
+    <!-- Import / restore backup -->
+    <string name="restore_backup">Restore backup…</string>
+    <string name="import_title">Restore backup</string>
+    <string name="import_found_records">Found %1$d records.\n\nWhat would you like to do?</string>
+    <string name="import_add">Add to existing data</string>
+    <string name="import_replace">Replace all</string>
+    <string name="import_replace_confirm">Really delete all existing data and replace with the backup? This cannot be undone.</string>
+    <string name="import_done">Restored %1$d records</string>
+    <string name="import_no_data">File does not contain valid data for import</string>
+
+    <!-- About -->
+    <string name="action_about">About</string>
+    <string name="about_version">Version %1$s (build %2$d)</string>
+    <string name="about_description">App for tracking BYD vehicle operations.\nTrack electricity, gasoline consumption, costs and locations with CSV export.</string>
+    <string name="about_db_version">Database: version %1$d</string>
+
+    <!-- GPS location -->
+    <string name="gps_load_location">Load GPS location</string>
+    <string name="gps_loading">Loading location…</string>
+    <string name="gps_permission_denied">Location access denied</string>
+    <string name="gps_unavailable">GPS and network are unavailable</string>
+    <string name="gps_timeout">Location not found – please try again</string>
+    <string name="open_in_maps">Open in maps</string>
+    <string name="fmt_gps_coords">%1$.5f, %2$.5f</string>
+
+    <!-- Filter / export -->
+    <string name="type_all">All types</string>
+    <string name="label_date_from">From</string>
+    <string name="label_date_to">To</string>
+    <string name="filter_options">Filter data</string>
+
+    <!-- Battery state of charge -->
+    <string name="label_soc_start">Battery at start</string>
+    <string name="label_soc_end">Battery at end</string>
+    <string name="action_set_today">Set today</string>
+    <string name="action_set_now">Set current time</string>
+    <string name="action_set_full">Charged to 100 %</string>
+    <string name="error_soc_range">Battery level must be between 0 and 100 %</string>
+    <string name="error_soc_order">End level must be higher than start level</string>
+
+    <!-- Derived values -->
+    <string name="fmt_soc_range">%1$s %% → %2$s %%</string>
+    <string name="fmt_soc_gain">Into battery %1$s kWh (%2$s %%)</string>
+    <string name="fmt_soc_gain_estimate">Estimated end: ~%1$s %% (at 100%% efficiency)</string>
+    <string name="fmt_efficiency">efficiency %1$s %%</string>
+    <string name="fmt_real_power">actual %1$s kW</string>
+    <string name="fmt_session_range">good for ~%1$s km</string>
+    <string name="soc_efficiency_suspicious">Efficiency out of expected range – check %%, kWh and battery capacity in settings</string>
+    <string name="label_efficiency">Charging efficiency</string>
+    <string name="label_real_power">Actual power</string>
+    <string name="label_soc">Battery level</string>
+    <string name="label_battery_gain">Energy into battery</string>
+
+    <!-- Dashboard – electric stats -->
+    <string name="stats_electric_consumption">Electricity per 100 km</string>
+    <string name="stats_battery_consumption">Actual battery consumption</string>
+    <string name="stats_electric_range">Range on a full battery</string>
+    <string name="stats_avg_efficiency">Average charging efficiency</string>
+    <string name="stats_cost_per_100km">Cost per 100 km</string>
+    <string name="stats_distance">Distance (odometer)</string>
+    <string name="fmt_kwh_per_100km">%1$s kWh/100 km</string>
+    <string name="fmt_km">%1$s km</string>
+    <string name="fmt_percent">%1$s %%</string>
+    <string name="fmt_cost_per_100km">%1$s CZK/100 km</string>
+    <string name="fmt_cost_split">%1$s CZK/100 km (electricity %2$s, petrol %3$s)</string>
+    <string name="hint_combined_consumption">Calculated over all kilometres driven, including those on petrol.</string>
+    <string name="hint_battery_consumption">From stretches between charges with no refuelling – median.</string>
+
+    <!-- Charts – new views -->
+    <string name="chart_soc">Battery level</string>
+    <string name="chart_efficiency">Charging efficiency</string>
+    <string name="chart_legend_soc_start">Start (%)</string>
+    <string name="chart_legend_soc_end">End (%)</string>
+    <string name="chart_legend_efficiency">Efficiency (%)</string>
+
+    <!-- Seasons -->
+    <string name="season_spring">Spring</string>
+    <string name="season_summer">Summer</string>
+    <string name="season_autumn">Autumn</string>
+    <string name="season_winter">Winter</string>
+    <string name="chart_by_season">By season</string>
+    <string name="dashboard_seasons">By season</string>
+    <string name="hint_seasons">Battery consumption in kWh/100 km; seasons are summed across all years.</string>
+    <string name="fmt_season_line">%1$s: %2$s</string>
+
+    <!-- Statistics by email -->
+    <string name="action_send_stats">Send statistics by email</string>
+    <string name="stats_email_subject">BYD Logger – statistics</string>
+    <string name="send_stats">Send statistics</string>
+    <string name="report_title">BYD Logger – statistics summary</string>
+    <string name="report_period">Period: %1$s – %2$s</string>
+    <string name="report_record_count">Records: %1$d</string>
+    <string name="report_battery_capacity">Battery capacity: %1$s kWh</string>
+    <string name="report_section_total">TOTAL</string>
+    <string name="report_section_seasons">BY SEASON</string>
+    <string name="report_season_header">%1$s (%2$d records)</string>
+    <string name="report_no_data">Not enough data</string>
+    <string name="report_footer">The attached ZIP holds the same figures as CSV (seasons and individual months).</string>
+
+    <string name="fmt_season_battery">%1$s: battery %2$s kWh/100 km, range %3$s km</string>
+    <string name="fmt_season_combined">%1$s: electricity %2$s kWh/100 km, petrol %3$s l/100 km</string>
+    <string name="fmt_season_minimal">%1$s: %2$d records</string>
+    <string name="chart_legend_electric">Electricity (kWh/100 km)</string>
+    <string name="chart_legend_gasoline">Petrol (l/100 km)</string>
+
+    <!-- Backup to file -->
+    <string name="action_backup_file">Save backup to file</string>
+    <string name="backup_saved">Backup saved (%1$d records)</string>
+    <string name="backup_save_failed">Could not save the backup</string>
+
+    <!-- Tabs by energy type -->
+    <string name="tab_electric">Electricity</string>
+    <string name="tab_gasoline">Petrol</string>
+    <string name="energy_electric">Electricity</string>
+    <string name="energy_gasoline">Petrol</string>
+    <string name="energy_no_electric">No charging recorded yet.\nAdd one on the Records tab.</string>
+    <string name="energy_no_gasoline">No refuelling recorded yet.\nAdd one on the Records tab.</string>
+    <string name="energy_section_consumption">Consumption</string>
+    <string name="stats_avg_price_liter">Average price per litre</string>
+    <string name="stats_avg_price_kwh">Average price per kWh</string>
+    <string name="hint_full_tank">Full-tank method – assumes every fill-up is to full.</string>
+    <string name="fmt_breakdown_value">%1$s (%2$d×)</string>
+
+    <!-- Period selector on energy tabs -->
+    <string name="energy_period">Period</string>
+    <string name="period_all">Whole period</string>
+    <string name="period_current_year">Current year (%1$s)</string>
+    <string name="energy_section_months">By month</string>
+    <string name="energy_section_period">Total for the period</string>
+    <string name="hint_period_consumption">Average for the selected period; kilometres from odometer readings within it.</string>
+
+    <!-- Inner chart tabs and comparison -->
+    <string name="chart_tab_total">Total</string>
+    <string name="chart_tab_compare">Compare</string>
+    <string name="compare_what">What to compare</string>
+    <string name="compare_mode_periods">Two periods</string>
+    <string name="compare_mode_energy">Electricity vs petrol</string>
+    <string name="compare_mode_types">Charging types</string>
+    <string name="compare_mode_years">Year by year</string>
+    <string name="compare_period_a">Period A</string>
+    <string name="compare_period_b">Period B</string>
+    <string name="compare_diff">Difference</string>
+    <string name="compare_amount">Amount</string>
+    <string name="compare_saving">Saving per 100 km</string>
+    <string name="compare_col_amount">Amount</string>
+    <string name="compare_col_price">Price/kWh</string>
+    <string name="compare_col_share">Share</string>
+    <string name="compare_col_electric">Electricity</string>
+    <string name="compare_col_gasoline">Petrol</string>
+    <string name="compare_col_cost">Cost</string>
+    <string name="period_whole_year">Whole year</string>
+    <string name="period_month">Month</string>
+
+    <!-- Charts on energy and compare tabs -->
+    <string name="chart_metric_consumption">Consumption</string>
+    <string name="chart_metric_amount">Amount</string>
+    <string name="chart_metric_cost">Cost</string>
+    <string name="chart_quick_overview">Quick overview</string>
+    <string name="chart_by_years">By year</string>
+    <string name="chart_by_months">By month</string>
+</resources>

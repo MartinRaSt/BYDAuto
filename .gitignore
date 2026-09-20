@@ -1,0 +1,55 @@
+# ==========================================================
+#  BYD Logger — co do repozitáře nepatří
+# ==========================================================
+
+# --- Nástroje a lokální nastavení ---
+.claude/
+
+# --- Android Studio / IntelliJ ---
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+captures/
+
+# --- Gradle ---
+.gradle/
+build/
+**/build/
+local.properties
+
+# --- Podpisové klíče — NIKDY necommitovat ---
+# Release build se podepisuje debug klíčem z ~/.android/debug.keystore.
+# Ten leží mimo repozitář a je nenahraditelný: bez něj nelze nainstalovat
+# aktualizaci přes už nainstalovanou aplikaci. Zálohovat ho zvlášť.
+KeyStore/
+keystore/
+*.keystore
+*.jks
+*.p12
+*.pepk
+
+# --- Výstupy buildu ---
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# --- Profiler a diagnostika ---
+*.hprof
+*.log
+
+# --- Kotlin / Java ---
+*.class
+
+# ==========================================================
+#  Co se naopak commitovat MÁ (nepřidávat do ignore):
+#
+#  app/schemas/       exportovaná schémata Room. Jsou potřeba pro migrační
+#                     testy a pro sledování změn databáze v historii.
+#  app/version.properties
+#                     versionCode se sám zvyšuje při každém buildu; drží
+#                     přehled, která verze šla na telefon.
+#  gradle/wrapper/    wrapper musí být v repozitáři, jinak projekt nikdo
+#                     jiný nesestaví.
+# ==========================================================

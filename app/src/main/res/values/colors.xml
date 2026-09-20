@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#FF388E3C</color>
+    <color name="textSecondary">#FF757575</color>
+
+    <!-- Typy nabíjení -->
+    <color name="type_fve">#FF2E7D32</color>
+    <color name="type_grid">#FF1565C0</color>
+    <color name="type_garage">#FFBF360C</color>
+    <color name="type_public">#FF4A148C</color>
+    <color name="type_gasoline">#FFE65100</color>
+
+    <!-- Oddelovac sekci; v tmavem motivu se prepisuje ve values-night -->
+    <color name="divider">#1F000000</color>
+
+    <!-- Upozorneni na nepravdepodobnou hodnotu; v tmavem motivu svetlejsi odstin -->
+    <color name="warning">#FFC62828</color>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tmavy motiv. Prepisuji se jen barvy, ktere by na tmavem pozadi mely
+    nedostatecny kontrast. Barvy typu nabijeni zustavaji stejne, aby si
+    uzivatel udrzel stejnou barevnou orientaci v obou motivech.
+-->
+<resources>
+    <!-- Na tmavem pozadi musi byt sedá svetlejsi, jinak je necitelna -->
+    <color name="textSecondary">#FFB0B0B0</color>
+
+    <!-- Oddelovac: na tmavem pozadi svetly, ne tmave sedy -->
+    <color name="divider">#33FFFFFF</color>
+
+    <!-- Varovna cervena svetlejsi, aby byla citelna na tmavem podkladu -->
+    <color name="warning">#FFFF6B6B</color>
+</resources>

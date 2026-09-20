@@ -1,0 +1,26 @@
+# Normalizace konců řádků. Bez tohoto souboru Git na Windows přepisuje LF na
+# CRLF a skripty pro Unix pak v repozitáři vypadají jako celé změněné.
+
+* text=auto eol=lf
+
+# Windows skripty musí mít CRLF, jinak je cmd.exe neumí spustit
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# Gradle wrapper pro Unix naopak vyžaduje LF
+gradlew text eol=lf
+*.sh    text eol=lf
+
+# Binární soubory Git nesmí normalizovat
+*.png       binary
+*.jpg       binary
+*.webp      binary
+*.jar       binary
+*.keystore  binary
+*.jks       binary
+*.apk       binary
+*.aab       binary
+*.zip       binary
+
+# Sloučení těchto souborů ručně — automatické slučování by rozbilo formát
+*.md        text diff=markdown
